@@ -1,0 +1,96 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "architecture": {
+                    "description": "The target architecture of the robot.",
+                    "enum": [
+                        "X86_64",
+                        "ARM64",
+                        "ARMHF"
+                    ],
+                    "type": "string"
+                },
+                "greengrassGroupId": {
+                    "description": "The Greengrass group id.",
+                    "maxLength": 1224,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name for the robot.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "A map that contains tag keys and tag values that are attached to the robot.",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 256,
+                                "minLength": 0,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "minItems": 0,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "name",
+                "architecture",
+                "greengrassGroupId"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

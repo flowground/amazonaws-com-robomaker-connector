@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "application": {
+                    "description": "The application information for the robot application.",
+                    "maxLength": 1224,
+                    "minLength": 1,
+                    "pattern": "arn:.*",
+                    "type": "string"
+                },
+                "currentRevisionId": {
+                    "description": "The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.",
+                    "maxLength": 40,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_.\\-]*",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "application"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

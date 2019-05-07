@@ -1,0 +1,156 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "application": {
+                    "description": "The application information for the simulation application.",
+                    "maxLength": 1224,
+                    "minLength": 1,
+                    "pattern": "arn:.*",
+                    "type": "string"
+                },
+                "currentRevisionId": {
+                    "description": "The revision id for the robot application.",
+                    "maxLength": 40,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_.\\-]*",
+                    "type": "string"
+                },
+                "renderingEngine": {
+                    "description": "The rendering engine for the simulation application.",
+                    "properties": {
+                        "name": {
+                            "description": "The name of the rendering engine.",
+                            "enum": [
+                                "OGRE"
+                            ],
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "The version of the rendering engine.",
+                            "pattern": "1.x",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "robotSoftwareSuite": {
+                    "description": "Information about the robot software suite.",
+                    "properties": {
+                        "name": {
+                            "description": "The name of the robot software suite.",
+                            "enum": [
+                                "ROS"
+                            ],
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "The version of the robot software suite.",
+                            "enum": [
+                                "Kinetic"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "simulationSoftwareSuite": {
+                    "description": "The simulation software suite used by the simulation application.",
+                    "properties": {
+                        "name": {
+                            "description": "The name of the simulation software suite.",
+                            "enum": [
+                                "Gazebo"
+                            ],
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "The version of the simulation software suite.",
+                            "pattern": "7",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "sources": {
+                    "description": "The sources of the simulation application.",
+                    "items": {
+                        "description": "Information about a source configuration.",
+                        "properties": {
+                            "architecture": {
+                                "description": "The target processor architecture for the application.",
+                                "enum": [
+                                    "X86_64",
+                                    "ARM64",
+                                    "ARMHF"
+                                ],
+                                "type": "string"
+                            },
+                            "s3Bucket": {
+                                "description": "The Amazon S3 bucket name.",
+                                "maxLength": 63,
+                                "minLength": 3,
+                                "pattern": "[a-z0-9][a-z0-9\\-]*[a-z0-9]",
+                                "type": "string"
+                            },
+                            "s3Key": {
+                                "description": "The s3 object key.",
+                                "maxLength": 1024,
+                                "minLength": 1,
+                                "pattern": ".*",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "application",
+                "sources",
+                "simulationSoftwareSuite",
+                "robotSoftwareSuite",
+                "renderingEngine"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

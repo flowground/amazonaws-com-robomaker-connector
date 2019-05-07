@@ -1,0 +1,185 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "clientRequestToken": {
+                    "description": "Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_\\-=]*",
+                    "type": "string"
+                },
+                "deploymentApplicationConfigs": {
+                    "description": "The deployment application configuration.",
+                    "items": {
+                        "description": "Information about a deployment application configuration.",
+                        "properties": {
+                            "application": {
+                                "description": "The Amazon Resource Name (ARN) of the robot application.",
+                                "maxLength": 1224,
+                                "minLength": 1,
+                                "pattern": "arn:.*",
+                                "type": "string"
+                            },
+                            "applicationVersion": {
+                                "description": "The version of the application.",
+                                "maxLength": 255,
+                                "minLength": 1,
+                                "pattern": "[0-9]*",
+                                "type": "string"
+                            },
+                            "launchConfig": {
+                                "description": "The launch configuration.",
+                                "properties": {
+                                    "environmentVariables": {
+                                        "description": "An array of key/value pairs specifying environment variables for the robot application",
+                                        "items": {
+                                            "properties": {
+                                                "key": {
+                                                    "maxLength": 1024,
+                                                    "minLength": 1,
+                                                    "pattern": "[A-Z_][A-Z0-9_]*",
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "maxLength": 1024,
+                                                    "minLength": 1,
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "maxItems": 16,
+                                        "minItems": 0,
+                                        "type": "array"
+                                    },
+                                    "launchFile": {
+                                        "description": "The launch file name.",
+                                        "type": "string"
+                                    },
+                                    "packageName": {
+                                        "description": "The package name.",
+                                        "type": "string"
+                                    },
+                                    "postLaunchFile": {
+                                        "description": "The deployment post-launch file. This file will be executed after the launch file.",
+                                        "type": "string"
+                                    },
+                                    "preLaunchFile": {
+                                        "description": "The deployment pre-launch file. This file will be executed prior to the launch file.",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "packageName",
+                                    "launchFile"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "application",
+                            "applicationVersion",
+                            "launchConfig"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 1,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "deploymentConfig": {
+                    "description": "The requested deployment configuration.",
+                    "properties": {
+                        "concurrentDeploymentPercentage": {
+                            "description": "The percentage of robots receiving the deployment at the same time.",
+                            "maximum": 100,
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        "failureThresholdPercentage": {
+                            "description": "The percentage of deployments that need to fail before stopping deployment.",
+                            "maximum": 100,
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "fleet": {
+                    "description": "The Amazon Resource Name (ARN) of the fleet to deploy.",
+                    "maxLength": 1224,
+                    "minLength": 1,
+                    "pattern": "arn:.*",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "A map that contains tag keys and tag values that are attached to the deployment job.",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 256,
+                                "minLength": 0,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "minItems": 0,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "clientRequestToken",
+                "fleet",
+                "deploymentApplicationConfigs"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

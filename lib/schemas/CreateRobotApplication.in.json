@@ -1,0 +1,134 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "description": "The name of the robot application.",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "pattern": "[a-zA-Z0-9_\\-]*",
+                    "type": "string"
+                },
+                "robotSoftwareSuite": {
+                    "description": "The robot software suite used by the robot application.",
+                    "properties": {
+                        "name": {
+                            "description": "The name of the robot software suite.",
+                            "enum": [
+                                "ROS"
+                            ],
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "The version of the robot software suite.",
+                            "enum": [
+                                "Kinetic"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "sources": {
+                    "description": "The sources of the robot application.",
+                    "items": {
+                        "description": "Information about a source configuration.",
+                        "properties": {
+                            "architecture": {
+                                "description": "The target processor architecture for the application.",
+                                "enum": [
+                                    "X86_64",
+                                    "ARM64",
+                                    "ARMHF"
+                                ],
+                                "type": "string"
+                            },
+                            "s3Bucket": {
+                                "description": "The Amazon S3 bucket name.",
+                                "maxLength": 63,
+                                "minLength": 3,
+                                "pattern": "[a-z0-9][a-z0-9\\-]*[a-z0-9]",
+                                "type": "string"
+                            },
+                            "s3Key": {
+                                "description": "The s3 object key.",
+                                "maxLength": 1024,
+                                "minLength": 1,
+                                "pattern": ".*",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "tags": {
+                    "description": "A map that contains tag keys and tag values that are attached to the robot application.",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 256,
+                                "minLength": 0,
+                                "pattern": "[a-zA-Z0-9 _.\\-\\/+=:]*",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 50,
+                    "minItems": 0,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "name",
+                "sources",
+                "robotSoftwareSuite"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,635 @@
+{
+    "title": "AWS RoboMaker",
+    "description": "his section provides documentation for the AWS RoboMaker API operations.",
+    "docsUrl": "https://docs.aws.amazon.com/robomaker/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/robomaker/2018-06-29/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://robomaker.amazonaws.com/",
+                    "http://robomaker.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "BatchDescribeSimulationJob": {
+            "main": "./lib/actions/BatchDescribeSimulationJob.js",
+            "title": "Describes one or more simulation jobs.",
+            "description": "Describes one or more simulation jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/BatchDescribeSimulationJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CancelSimulationJob": {
+            "main": "./lib/actions/CancelSimulationJob.js",
+            "title": "Cancels the specified simulation job.",
+            "description": "Cancels the specified simulation job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CancelSimulationJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateDeploymentJob": {
+            "main": "./lib/actions/CreateDeploymentJob.js",
+            "title": "<p>Deploys a specific version of a robot application to robots in a fleet.</p> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p>",
+            "description": "<p>Deploys a specific version of a robot application to robots in a fleet.</p> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateDeploymentJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateFleet": {
+            "main": "./lib/actions/CreateFleet.js",
+            "title": "Creates a fleet, a logical group of robots running the same robot application.",
+            "description": "Creates a fleet, a logical group of robots running the same robot application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateFleet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateRobot": {
+            "main": "./lib/actions/CreateRobot.js",
+            "title": "Creates a robot.",
+            "description": "Creates a robot.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateRobot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateRobotApplication": {
+            "main": "./lib/actions/CreateRobotApplication.js",
+            "title": "Creates a robot application. ",
+            "description": "Creates a robot application. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateRobotApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateRobotApplicationVersion": {
+            "main": "./lib/actions/CreateRobotApplicationVersion.js",
+            "title": "Creates a version of a robot application.",
+            "description": "Creates a version of a robot application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateRobotApplicationVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSimulationApplication": {
+            "main": "./lib/actions/CreateSimulationApplication.js",
+            "title": "Creates a simulation application.",
+            "description": "Creates a simulation application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSimulationApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSimulationApplicationVersion": {
+            "main": "./lib/actions/CreateSimulationApplicationVersion.js",
+            "title": "Creates a simulation application with a specific revision id.",
+            "description": "Creates a simulation application with a specific revision id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSimulationApplicationVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSimulationJob": {
+            "main": "./lib/actions/CreateSimulationJob.js",
+            "title": "Creates a simulation job.",
+            "description": "Creates a simulation job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSimulationJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteFleet": {
+            "main": "./lib/actions/DeleteFleet.js",
+            "title": "Deletes a fleet.",
+            "description": "Deletes a fleet.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteFleet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteRobot": {
+            "main": "./lib/actions/DeleteRobot.js",
+            "title": "Deletes a robot.",
+            "description": "Deletes a robot.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteRobot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteRobotApplication": {
+            "main": "./lib/actions/DeleteRobotApplication.js",
+            "title": "Deletes a robot application.",
+            "description": "Deletes a robot application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteRobotApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteSimulationApplication": {
+            "main": "./lib/actions/DeleteSimulationApplication.js",
+            "title": "Deletes a simulation application.",
+            "description": "Deletes a simulation application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteSimulationApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeregisterRobot": {
+            "main": "./lib/actions/DeregisterRobot.js",
+            "title": "Deregisters a robot.",
+            "description": "Deregisters a robot.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeregisterRobot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeDeploymentJob": {
+            "main": "./lib/actions/DescribeDeploymentJob.js",
+            "title": "Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]",
+            "description": "Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeDeploymentJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeFleet": {
+            "main": "./lib/actions/DescribeFleet.js",
+            "title": "Describes a fleet.",
+            "description": "Describes a fleet.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeFleet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeRobot": {
+            "main": "./lib/actions/DescribeRobot.js",
+            "title": "Describes a robot.",
+            "description": "Describes a robot.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeRobot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeRobotApplication": {
+            "main": "./lib/actions/DescribeRobotApplication.js",
+            "title": "Describes a robot application.",
+            "description": "Describes a robot application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeRobotApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeSimulationApplication": {
+            "main": "./lib/actions/DescribeSimulationApplication.js",
+            "title": "Describes a simulation application.",
+            "description": "Describes a simulation application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeSimulationApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeSimulationJob": {
+            "main": "./lib/actions/DescribeSimulationJob.js",
+            "title": "Describes a simulation job.",
+            "description": "Describes a simulation job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeSimulationJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListDeploymentJobs": {
+            "main": "./lib/actions/ListDeploymentJobs.js",
+            "title": "Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.",
+            "description": "Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListDeploymentJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListFleets": {
+            "main": "./lib/actions/ListFleets.js",
+            "title": "Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.",
+            "description": "Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListFleets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListRobotApplications": {
+            "main": "./lib/actions/ListRobotApplications.js",
+            "title": "Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.",
+            "description": "Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListRobotApplications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListRobots": {
+            "main": "./lib/actions/ListRobots.js",
+            "title": "Returns a list of robots. You can optionally provide filters to retrieve specific robots.",
+            "description": "Returns a list of robots. You can optionally provide filters to retrieve specific robots.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListRobots.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListSimulationApplications": {
+            "main": "./lib/actions/ListSimulationApplications.js",
+            "title": "Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications.",
+            "description": "Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListSimulationApplications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListSimulationJobs": {
+            "main": "./lib/actions/ListSimulationJobs.js",
+            "title": "Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.",
+            "description": "Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListSimulationJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RegisterRobot": {
+            "main": "./lib/actions/RegisterRobot.js",
+            "title": "Registers a robot with a fleet.",
+            "description": "Registers a robot with a fleet.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RegisterRobot.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RestartSimulationJob": {
+            "main": "./lib/actions/RestartSimulationJob.js",
+            "title": "Restarts a running simulation job.",
+            "description": "Restarts a running simulation job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RestartSimulationJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SyncDeploymentJob": {
+            "main": "./lib/actions/SyncDeploymentJob.js",
+            "title": "Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.",
+            "description": "Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SyncDeploymentJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UntagResource": {
+            "main": "./lib/actions/UntagResource.js",
+            "title": "<p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html\"> <code>TagResource</code> </a>. </p>",
+            "description": "<p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html\"> <code>TagResource</code> </a>. </p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UntagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTagsForResource": {
+            "main": "./lib/actions/ListTagsForResource.js",
+            "title": "Lists all tags on a AWS RoboMaker resource.",
+            "description": "Lists all tags on a AWS RoboMaker resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTagsForResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagResource": {
+            "main": "./lib/actions/TagResource.js",
+            "title": "<p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html\">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>",
+            "description": "<p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html\">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagResource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateRobotApplication": {
+            "main": "./lib/actions/UpdateRobotApplication.js",
+            "title": "Updates a robot application.",
+            "description": "Updates a robot application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateRobotApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateSimulationApplication": {
+            "main": "./lib/actions/UpdateSimulationApplication.js",
+            "title": "Updates a simulation application.",
+            "description": "Updates a simulation application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateSimulationApplication.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
