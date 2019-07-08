@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "BatchDescribeSimulationJob": {
             "main": "./lib/actions/BatchDescribeSimulationJob.js",
-            "title": "Describes one or more simulation jobs.",
+            "title": "BatchDescribeSimulationJob",
             "description": "Describes one or more simulation jobs.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "CancelSimulationJob": {
             "main": "./lib/actions/CancelSimulationJob.js",
-            "title": "Cancels the specified simulation job.",
+            "title": "CancelSimulationJob",
             "description": "Cancels the specified simulation job.",
             "fields": {
                 "verbose": {
@@ -72,8 +72,8 @@
         },
         "CreateDeploymentJob": {
             "main": "./lib/actions/CreateDeploymentJob.js",
-            "title": "<p>Deploys a specific version of a robot application to robots in a fleet.</p> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p>",
-            "description": "<p>Deploys a specific version of a robot application to robots in a fleet.</p> <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html\">Creating a Robot Application Version</a>. </p>",
+            "title": "CreateDeploymentJob",
+            "description": "Deploys a specific version of a robot application to robots in a fleet.\n\nThe robot application must have a numbered applicationVersion for consistency\nreasons. To create a new version, use CreateRobotApplicationVersion or see \nCreating a Robot Application Version\n[https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html]\n.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -89,7 +89,7 @@
         },
         "CreateFleet": {
             "main": "./lib/actions/CreateFleet.js",
-            "title": "Creates a fleet, a logical group of robots running the same robot application.",
+            "title": "CreateFleet",
             "description": "Creates a fleet, a logical group of robots running the same robot application.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "CreateRobot": {
             "main": "./lib/actions/CreateRobot.js",
-            "title": "Creates a robot.",
+            "title": "CreateRobot",
             "description": "Creates a robot.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "CreateRobotApplication": {
             "main": "./lib/actions/CreateRobotApplication.js",
-            "title": "Creates a robot application. ",
+            "title": "CreateRobotApplication",
             "description": "Creates a robot application. ",
             "fields": {
                 "verbose": {
@@ -140,7 +140,7 @@
         },
         "CreateRobotApplicationVersion": {
             "main": "./lib/actions/CreateRobotApplicationVersion.js",
-            "title": "Creates a version of a robot application.",
+            "title": "CreateRobotApplicationVersion",
             "description": "Creates a version of a robot application.",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "CreateSimulationApplication": {
             "main": "./lib/actions/CreateSimulationApplication.js",
-            "title": "Creates a simulation application.",
+            "title": "CreateSimulationApplication",
             "description": "Creates a simulation application.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "CreateSimulationApplicationVersion": {
             "main": "./lib/actions/CreateSimulationApplicationVersion.js",
-            "title": "Creates a simulation application with a specific revision id.",
+            "title": "CreateSimulationApplicationVersion",
             "description": "Creates a simulation application with a specific revision id.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "CreateSimulationJob": {
             "main": "./lib/actions/CreateSimulationJob.js",
-            "title": "Creates a simulation job.",
+            "title": "CreateSimulationJob",
             "description": "Creates a simulation job.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "DeleteFleet": {
             "main": "./lib/actions/DeleteFleet.js",
-            "title": "Deletes a fleet.",
+            "title": "DeleteFleet",
             "description": "Deletes a fleet.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DeleteRobot": {
             "main": "./lib/actions/DeleteRobot.js",
-            "title": "Deletes a robot.",
+            "title": "DeleteRobot",
             "description": "Deletes a robot.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "DeleteRobotApplication": {
             "main": "./lib/actions/DeleteRobotApplication.js",
-            "title": "Deletes a robot application.",
+            "title": "DeleteRobotApplication",
             "description": "Deletes a robot application.",
             "fields": {
                 "verbose": {
@@ -259,7 +259,7 @@
         },
         "DeleteSimulationApplication": {
             "main": "./lib/actions/DeleteSimulationApplication.js",
-            "title": "Deletes a simulation application.",
+            "title": "DeleteSimulationApplication",
             "description": "Deletes a simulation application.",
             "fields": {
                 "verbose": {
@@ -276,7 +276,7 @@
         },
         "DeregisterRobot": {
             "main": "./lib/actions/DeregisterRobot.js",
-            "title": "Deregisters a robot.",
+            "title": "DeregisterRobot",
             "description": "Deregisters a robot.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DescribeDeploymentJob": {
             "main": "./lib/actions/DescribeDeploymentJob.js",
-            "title": "Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]",
+            "title": "DescribeDeploymentJob",
             "description": "Describes a deployment job. [Does it work regardless of deployment status, e.g. Failed?]",
             "fields": {
                 "verbose": {
@@ -310,7 +310,7 @@
         },
         "DescribeFleet": {
             "main": "./lib/actions/DescribeFleet.js",
-            "title": "Describes a fleet.",
+            "title": "DescribeFleet",
             "description": "Describes a fleet.",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "DescribeRobot": {
             "main": "./lib/actions/DescribeRobot.js",
-            "title": "Describes a robot.",
+            "title": "DescribeRobot",
             "description": "Describes a robot.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "DescribeRobotApplication": {
             "main": "./lib/actions/DescribeRobotApplication.js",
-            "title": "Describes a robot application.",
+            "title": "DescribeRobotApplication",
             "description": "Describes a robot application.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "DescribeSimulationApplication": {
             "main": "./lib/actions/DescribeSimulationApplication.js",
-            "title": "Describes a simulation application.",
+            "title": "DescribeSimulationApplication",
             "description": "Describes a simulation application.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "DescribeSimulationJob": {
             "main": "./lib/actions/DescribeSimulationJob.js",
-            "title": "Describes a simulation job.",
+            "title": "DescribeSimulationJob",
             "description": "Describes a simulation job.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "ListDeploymentJobs": {
             "main": "./lib/actions/ListDeploymentJobs.js",
-            "title": "Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.",
+            "title": "ListDeploymentJobs",
             "description": "Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.",
             "fields": {
                 "verbose": {
@@ -412,7 +412,7 @@
         },
         "ListFleets": {
             "main": "./lib/actions/ListFleets.js",
-            "title": "Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.",
+            "title": "ListFleets",
             "description": "Returns a list of fleets. You can optionally provide filters to retrieve specific fleets.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "ListRobotApplications": {
             "main": "./lib/actions/ListRobotApplications.js",
-            "title": "Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.",
+            "title": "ListRobotApplications",
             "description": "Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "ListRobots": {
             "main": "./lib/actions/ListRobots.js",
-            "title": "Returns a list of robots. You can optionally provide filters to retrieve specific robots.",
+            "title": "ListRobots",
             "description": "Returns a list of robots. You can optionally provide filters to retrieve specific robots.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "ListSimulationApplications": {
             "main": "./lib/actions/ListSimulationApplications.js",
-            "title": "Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications.",
+            "title": "ListSimulationApplications",
             "description": "Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "ListSimulationJobs": {
             "main": "./lib/actions/ListSimulationJobs.js",
-            "title": "Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.",
+            "title": "ListSimulationJobs",
             "description": "Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.",
             "fields": {
                 "verbose": {
@@ -497,7 +497,7 @@
         },
         "RegisterRobot": {
             "main": "./lib/actions/RegisterRobot.js",
-            "title": "Registers a robot with a fleet.",
+            "title": "RegisterRobot",
             "description": "Registers a robot with a fleet.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "RestartSimulationJob": {
             "main": "./lib/actions/RestartSimulationJob.js",
-            "title": "Restarts a running simulation job.",
+            "title": "RestartSimulationJob",
             "description": "Restarts a running simulation job.",
             "fields": {
                 "verbose": {
@@ -531,7 +531,7 @@
         },
         "SyncDeploymentJob": {
             "main": "./lib/actions/SyncDeploymentJob.js",
-            "title": "Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.",
+            "title": "SyncDeploymentJob",
             "description": "Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.",
             "fields": {
                 "verbose": {
@@ -548,8 +548,8 @@
         },
         "UntagResource": {
             "main": "./lib/actions/UntagResource.js",
-            "title": "<p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html\"> <code>TagResource</code> </a>. </p>",
-            "description": "<p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href=\"https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html\"> <code>TagResource</code> </a>. </p>",
+            "title": "UntagResource",
+            "description": "Removes the specified tags from the specified AWS RoboMaker resource.\n\nTo remove a tag, specify the tag key. To change the tag value of an existing tag\nkey, use TagResource\n[https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html]\n.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -565,7 +565,7 @@
         },
         "ListTagsForResource": {
             "main": "./lib/actions/ListTagsForResource.js",
-            "title": "Lists all tags on a AWS RoboMaker resource.",
+            "title": "ListTagsForResource",
             "description": "Lists all tags on a AWS RoboMaker resource.",
             "fields": {
                 "verbose": {
@@ -582,8 +582,8 @@
         },
         "TagResource": {
             "main": "./lib/actions/TagResource.js",
-            "title": "<p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html\">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>",
-            "description": "<p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html\">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>",
+            "title": "TagResource",
+            "description": "Adds or edits tags for a AWS RoboMaker resource.\n\nEach tag consists of a tag key and a tag value. Tag keys and tag values are both\nrequired, but tag values can be empty strings. \n\nFor information about the rules that apply to tag keys and tag values, see \nUser-Defined Tag Restrictions\n[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html] \nin the AWS Billing and Cost Management User Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -599,7 +599,7 @@
         },
         "UpdateRobotApplication": {
             "main": "./lib/actions/UpdateRobotApplication.js",
-            "title": "Updates a robot application.",
+            "title": "UpdateRobotApplication",
             "description": "Updates a robot application.",
             "fields": {
                 "verbose": {
@@ -616,7 +616,7 @@
         },
         "UpdateSimulationApplication": {
             "main": "./lib/actions/UpdateSimulationApplication.js",
-            "title": "Updates a simulation application.",
+            "title": "UpdateSimulationApplication",
             "description": "Updates a simulation application.",
             "fields": {
                 "verbose": {
